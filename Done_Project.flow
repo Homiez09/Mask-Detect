@@ -1,0 +1,235 @@
+{
+    "connections": [
+        {
+            "in_id": "{bcc2e001-431a-4d3b-ad6d-33156c74126d}",
+            "in_index": 0,
+            "out_id": "{7982a04c-e0cf-4e84-b2d4-304b9e5d9ff5}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{a12c0dd6-5a0d-45ec-a81b-bcb332cd9cac}",
+            "in_index": 0,
+            "out_id": "{7982a04c-e0cf-4e84-b2d4-304b9e5d9ff5}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{fb9d71b8-ee17-4986-bc3c-f27556a88dab}",
+            "in_index": 0,
+            "out_id": "{556d6d92-35c7-4eb2-a755-8eb42cea3c70}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{7982a04c-e0cf-4e84-b2d4-304b9e5d9ff5}",
+            "in_index": 0,
+            "out_id": "{fb9d71b8-ee17-4986-bc3c-f27556a88dab}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{556d6d92-35c7-4eb2-a755-8eb42cea3c70}",
+            "in_index": 0,
+            "out_id": "{e5a08654-3e95-4fad-b8d1-d78aa0431f81}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{783fc354-e951-4edf-897a-2089e757c2de}",
+            "in_index": 0,
+            "out_id": "{fb9d71b8-ee17-4986-bc3c-f27556a88dab}",
+            "out_index": 0
+        },
+        {
+            "in_id": "{e5a08654-3e95-4fad-b8d1-d78aa0431f81}",
+            "in_index": 0,
+            "out_id": "{7982a04c-e0cf-4e84-b2d4-304b9e5d9ff5}",
+            "out_index": 0
+        }
+    ],
+    "nodes": [
+        {
+            "id": "{7982a04c-e0cf-4e84-b2d4-304b9e5d9ff5}",
+            "model": {
+                "data": {
+                    "curr_tap": 0,
+                    "draw_roi": true,
+                    "enable_tracking": false,
+                    "font_scale": 1.2,
+                    "font_thickness": 2,
+                    "frame_buffer": 5,
+                    "map_det_cfgs": [
+                        {
+                            "backend_gpu": false,
+                            "config_name": "main",
+                            "config_path": "C:/Users/zz964/Desktop/gen/export"
+                        }
+                    ],
+                    "max_dist": 150,
+                    "nms": 0.4,
+                    "rect_thickness": 2,
+                    "result_drawing": true,
+                    "roi_h": 5000,
+                    "roi_w": 5000,
+                    "roi_x": 0,
+                    "roi_y": 0,
+                    "show_confidence": true,
+                    "text_drawing": true,
+                    "this_config_name": "main",
+                    "thresh": 5,
+                    "txt_offset": 10
+                },
+                "name": "DeepDetect ",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": -81.37526899999997,
+                "y": 158.913756
+            }
+        },
+        {
+            "id": "{fb9d71b8-ee17-4986-bc3c-f27556a88dab}",
+            "model": {
+                "data": {
+                    "current_index": 40,
+                    "images_count": 40,
+                    "images_dir": "C:/Users/zz964/Desktop/FaceMask_dataset",
+                    "loop": null
+                },
+                "name": "ImageSlide",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": -209,
+                "y": 158
+            }
+        },
+        {
+            "id": "{556d6d92-35c7-4eb2-a755-8eb42cea3c70}",
+            "model": {
+                "name": "ButtonRun"
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": -343.771561,
+                "y": 158.00463499999995
+            }
+        },
+        {
+            "id": "{a12c0dd6-5a0d-45ec-a81b-bcb332cd9cac}",
+            "model": {
+                "height": 448,
+                "name": "Debug",
+                "output_h": 0,
+                "output_v": 0,
+                "page_index": 2,
+                "payload_h": 0,
+                "payload_v": 0,
+                "width": 221
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 205.68049312400024,
+                "y": -390.7113618809999
+            }
+        },
+        {
+            "id": "{e5a08654-3e95-4fad-b8d1-d78aa0431f81}",
+            "model": {
+                "delay_time": 1500,
+                "name": "Delay",
+                "node_enable": true
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": -464.0746339999999,
+                "y": 156.86349999999993
+            }
+        },
+        {
+            "id": "{bcc2e001-431a-4d3b-ad6d-33156c74126d}",
+            "model": {
+                "height": 123,
+                "label": {
+                    "bold": false,
+                    "console": "",
+                    "font": "Ubuntu",
+                    "key": "var objs = payload.DeepDetect.obj_count\nvar len = objs.length\nvar num = 0\nif (objs == \"\"){\n     label = \"Bad Mask ( NG )\"\n}\nfor(var i = 0; i<len;i++){\n     if(objs[i].count >= 4){\n        label     =     \"Good Mask ( OK )\"\n         break\n    }else{\n         label     =     \"Bad Mask ( NG )\"\n         break\n    }\n}\n\n",
+                    "size": 12,
+                    "widget_state": {
+                        "auto_indent": true,
+                        "auto_parent": true,
+                        "size": 11,
+                        "style": "Dracula",
+                        "widget_st_w": 0,
+                        "word_wrap": false
+                    }
+                },
+                "name": "Label",
+                "node_enable": true,
+                "width": 141
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": 108.5654589999998,
+                "y": 120.42496899999978
+            }
+        },
+        {
+            "id": "{783fc354-e951-4edf-897a-2089e757c2de}",
+            "model": {
+                "height": 448,
+                "name": "Debug",
+                "output_h": 0,
+                "output_v": 0,
+                "page_index": 2,
+                "payload_h": 0,
+                "payload_v": 0,
+                "width": 224
+            },
+            "ngo": {
+                "comment": {
+                    "data": "",
+                    "show": false
+                }
+            },
+            "position": {
+                "x": -80.57055701199992,
+                "y": -390.87334449899976
+            }
+        }
+    ],
+    "scene_data": {
+        "flow_view_pos_x": 62.20313868158222,
+        "flow_view_pos_y": -96.86598288851941,
+        "flow_view_zoom_factor": 0.5644739300537778
+    }
+}
